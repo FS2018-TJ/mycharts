@@ -13,12 +13,10 @@
 #   limitations under the License.
 
 #Deploy the pod
-apiVersion: v1
-kind: ConfigMap
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: {{ .Release.Name  }}-configmap1
-data:
-  myvalue:  {{ .Values.myvalue }}
+  name: notification
 spec:
   replicas: 1
   template:
